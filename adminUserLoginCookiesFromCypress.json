@@ -1,0 +1,54 @@
+[
+  {
+    "name": "KEYCLOAK_SESSION",
+    "value": "LUGAS-QS/6d9c6eb6-8520-4176-aa59-7b5819346e1a/0fbc6f2b-72c9-4bd3-aea5-d7441b80b316",
+    "path": "/auth/realms/LUGAS-QS/",
+    "secure": true,
+    "httpOnly": false,
+    "expiry": 1636676933.954434,
+    "domain": "lugas.dsecure-bdc.dataport.de",
+    "sameSite": "no_restriction"
+  },
+  {
+    "name": "AUTH_SESSION_ID",
+    "value": "0fbc6f2b-72c9-4bd3-aea5-d7441b80b316.keycloak-6b87574947-kmr6l",
+    "path": "/auth/realms/LUGAS-QS/",
+    "secure": true,
+    "httpOnly": true,
+    "domain": "lugas.dsecure-bdc.dataport.de",
+    "sameSite": "no_restriction"
+  },
+  {
+    "name": "AUTH_SESSION_ID_LEGACY",
+    "value": "0fbc6f2b-72c9-4bd3-aea5-d7441b80b316.keycloak-6b87574947-kmr6l",
+    "path": "/auth/realms/LUGAS-QS/",
+    "secure": false,
+    "httpOnly": true,
+    "domain": "lugas.dsecure-bdc.dataport.de"
+  },
+  {
+    "name": "KEYCLOAK_LOCALE",
+    "value": "de",
+    "path": "/auth/realms/LUGAS-QS/",
+    "secure": true,
+    "httpOnly": true,
+    "domain": "lugas.dsecure-bdc.dataport.de"
+  },
+  {
+    "name": "KEYCLOAK_IDENTITY",
+    "value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxMjZiNWJhMy1hOTE3LTRiN2QtYTc1YS1kMzVlZWIxNWIwNzIifQ.eyJleHAiOjE2MzY2NzY5MzQsImlhdCI6MTYzNjY0MDkzNCwianRpIjoiYjRiZTQ1NzItMTRhMy00ZTI2LWFjYTItZGIwZmUwMDc1NzdiIiwiaXNzIjoiaHR0cHM6Ly9sdWdhcy5kc2VjdXJlLWJkYy5kYXRhcG9ydC5kZS9hdXRoL3JlYWxtcy9MVUdBUy1RUyIsInN1YiI6IjZkOWM2ZWI2LTg1MjAtNDE3Ni1hYTU5LTdiNTgxOTM0NmUxYSIsInR5cCI6IlNlcmlhbGl6ZWQtSUQiLCJzZXNzaW9uX3N0YXRlIjoiMGZiYzZmMmItNzJjOS00YmQzLWFlYTUtZDc0NDFiODBiMzE2Iiwic2lkIjoiMGZiYzZmMmItNzJjOS00YmQzLWFlYTUtZDc0NDFiODBiMzE2Iiwic3RhdGVfY2hlY2tlciI6Ill4WU1LbGxtMjM5eGhiZ2x0ZlBJZE9CMVhJS1gyRml2ei1MM2gzSW9HdzgifQ.QJ2c__rvBFiJvQTziuEqVuaeJ882rQbwEZllLwBRjzY",
+    "path": "/auth/realms/LUGAS-QS/",
+    "secure": true,
+    "httpOnly": true,
+    "domain": "lugas.dsecure-bdc.dataport.de",
+    "sameSite": "no_restriction"
+  },
+  {
+    "name": "KEYCLOAK_IDENTITY_LEGACY",
+    "value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxMjZiNWJhMy1hOTE3LTRiN2QtYTc1YS1kMzVlZWIxNWIwNzIifQ.eyJleHAiOjE2MzY2NzY5MzQsImlhdCI6MTYzNjY0MDkzNCwianRpIjoiYjRiZTQ1NzItMTRhMy00ZTI2LWFjYTItZGIwZmUwMDc1NzdiIiwiaXNzIjoiaHR0cHM6Ly9sdWdhcy5kc2VjdXJlLWJkYy5kYXRhcG9ydC5kZS9hdXRoL3JlYWxtcy9MVUdBUy1RUyIsInN1YiI6IjZkOWM2ZWI2LTg1MjAtNDE3Ni1hYTU5LTdiNTgxOTM0NmUxYSIsInR5cCI6IlNlcmlhbGl6ZWQtSUQiLCJzZXNzaW9uX3N0YXRlIjoiMGZiYzZmMmItNzJjOS00YmQzLWFlYTUtZDc0NDFiODBiMzE2Iiwic2lkIjoiMGZiYzZmMmItNzJjOS00YmQzLWFlYTUtZDc0NDFiODBiMzE2Iiwic3RhdGVfY2hlY2tlciI6Ill4WU1LbGxtMjM5eGhiZ2x0ZlBJZE9CMVhJS1gyRml2ei1MM2gzSW9HdzgifQ.QJ2c__rvBFiJvQTziuEqVuaeJ882rQbwEZllLwBRjzY",
+    "path": "/auth/realms/LUGAS-QS/",
+    "secure": false,
+    "httpOnly": true,
+    "domain": "lugas.dsecure-bdc.dataport.de"
+  }
+]

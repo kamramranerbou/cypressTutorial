@@ -1,0 +1,6 @@
+{
+    "baseUrl": "https://qs.lugas.dsecure-bdc.dataport.de/frontend/Anbieterverwaltung",
+    "watchForFileChanges":true,
+    "chromeWebSecurity": false,
+    "experimentalSessionSupport":true
+}
