@@ -29,8 +29,8 @@ const { capitalize } = require("lodash")
 Cypress.Commands.add('login', (username, password) => {
     cy.session([username, password], () => {
         cy.visit('https://qs.lugas.dsecure-bdc.dataport.de/frontend/Anbieterverwaltung')
-        cy.get('[id="username"]').type('test@behorde.dglueck.de')
-        cy.get('#password').type('#Gandalf1')
+        cy.get('[id="username"]').type(username)
+        cy.get('#password').type(password)
         cy.get('[class="d-grid"]').find('[id="kc-login"]').click()
     })
     
