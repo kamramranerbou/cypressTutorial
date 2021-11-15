@@ -1,5 +1,6 @@
 /// <reference types = "cypress" />
 
+const { method } = require("bluebird")
 const { capitalize } = require("lodash")
 
 describe ('Test work', () => {
@@ -29,7 +30,21 @@ describe ('Test work', () => {
         cy.login('test@behorde.dglueck.de', '#Gandalf1')
         cy.visit("https://qs.lugas.dsecure-bdc.dataport.de/frontend/Anbieterverwaltung")
 
-        cy.get('[id="mat-input-0"]').click().type('kamran')
+        cy.intercept({
+            method:'GET',
+            url : 'https://qs.lugas.dsecure-bdc.dataport.de/api/Providers?deleted=false'
+        },
+        {
+            statusCode: 200,
+            body: 
+            [
+                {
+                    "id":"c06a4174-1a3a-432a-8107-01c4c553bdcd",
+                    "simpleName":"KAMRAN",
+                    "name":"Kamran"
+                }
+            ]
+        })
         
     })
 })
