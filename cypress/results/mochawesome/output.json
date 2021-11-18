@@ -1,0 +1,150 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-18T17:46:46.620Z",
+    "end": "2021-11-18T17:46:57.755Z",
+    "duration": 11085,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "31b4280d-347b-41ac-a016-96033e65c22e",
+      "title": "",
+      "fullFile": "cypress/integration/End2EndTest.spec.js",
+      "file": "cypress/integration/End2EndTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3af7cddd-9f6b-428d-a1fb-cf28a1e13aec",
+          "title": "Test - 1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Testing Menu",
+              "fullTitle": "Test - 1 Testing Menu",
+              "timedOut": null,
+              "duration": 9007,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_oberflaescheTest.onFrontend.titleOfThePage();\n_oberflaescheTest.onFrontend.userInfo();\n_oberflaescheTest.onFrontend.menuBar();",
+              "err": {},
+              "uuid": "b8ed2690-41a1-42b4-9aac-96d5c3df3046",
+              "parentUUID": "3af7cddd-9f6b-428d-a1fb-cf28a1e13aec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b8ed2690-41a1-42b4-9aac-96d5c3df3046"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9007,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "f519b53e-c2fc-46bf-bbe1-b5ce0960b61c",
+          "title": "Test - 2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Testing Body",
+              "fullTitle": "Test - 2 Testing Body",
+              "timedOut": null,
+              "duration": 2078,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_oberflaescheTest.onFrontend.intents();",
+              "err": {},
+              "uuid": "0d20ec64-c402-4465-8547-68fe05ddf72f",
+              "parentUUID": "f519b53e-c2fc-46bf-bbe1-b5ce0960b61c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0d20ec64-c402-4465-8547-68fe05ddf72f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2078,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "Cypress e2e Test Report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "charts": true,
+        "reportPageTitle": "e2e Test Report",
+        "reportFilename": "Cypress e2e Test Report",
+        "embeddedScreenshots": true,
+        "quiet": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
