@@ -1,0 +1,6 @@
+{
+    "baseUrl": "http://10.61.135.11/",
+    "watchForFileChanges":true,
+    "chromeWebSecurity": false,
+    "experimentalSessionSupport":true
+}
