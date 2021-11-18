@@ -23,11 +23,9 @@ describe ('Test - 2', () => {
         cy.visit('/')
     })
 
-    it.only('Testing Body', () => {
+    it('Testing Body', () => {
 
         onFrontend.intents()
-        //onFrontend.userInfo()
-        //onFrontend.menuBar()
 
     })
 })

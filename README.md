@@ -1,4 +1,4 @@
-# Cypress End-to-end tests for Chatbot Control Interface
+# Cypress End-to-End tests for Chatbot Control Interface
 
 ## Local machine setup
 ```
