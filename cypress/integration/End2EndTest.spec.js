@@ -12,7 +12,7 @@ describe ('Test - 1', () => {
 
         onFrontend.titleOfThePage()
         onFrontend.userInfo()
-        //onFrontend.menuBar()
+        onFrontend.menuBar()
 
     })
 })
