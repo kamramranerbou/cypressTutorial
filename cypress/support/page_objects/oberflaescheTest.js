@@ -84,6 +84,13 @@ export class frontEnd {
                 .click()
         
     }
+
+    mockingApi () {
+
+        cy.get('[data-cy=navDrawerIntents]')
+            .contains('Intents')
+                .click()
+    }
 }
 
 // Exportint class frontEnd to End2End to test
