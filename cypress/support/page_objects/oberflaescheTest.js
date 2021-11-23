@@ -70,6 +70,7 @@ export class frontEnd {
         cy.get('[id="input-49"]').type('Wetter')
 
         cy.get('[data-cy=createIntentButton]').click()
+        cy.wait(500)
 
         cy.get('[role="radiogroup"]')
             .find('[value="no"]')
@@ -82,6 +83,15 @@ export class frontEnd {
         cy.get('.v-breadcrumbs__item')
             .contains('Intents')
                 .click()
+        
+    }
+
+    Entities() {
+        cy.get('[data-cy="navDrawerEntities"]')
+            .contains('Entities')
+                .click()
+
+        cy.get('[id="input-169"]').type('test')
         
     }
 
