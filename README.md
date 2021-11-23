@@ -1,5 +1,12 @@
 # Cypress End-to-End tests for Chatbot Control Interface
 
+## Start Local Server
+
+```
+bash docker-build.sh
+docker-compose up
+```
+
 ## Local machine setup
 ```
 npm install
