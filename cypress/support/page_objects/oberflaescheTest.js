@@ -83,7 +83,6 @@ export class frontEnd {
         cy.get('.v-breadcrumbs__item')
             .contains('Intents')
                 .click()
-        
     }
 
     Entities() {
@@ -91,7 +90,10 @@ export class frontEnd {
             .contains('Entities')
                 .click()
 
-        cy.get('[id="input-169"]').type('test')
+        cy.get('.v-text-field__slot')
+            .contains('Suchen')
+                .click({force:true})
+                    .type('test')
         
     }
 
@@ -100,6 +102,101 @@ export class frontEnd {
         cy.get('[data-cy=navDrawerIntents]')
             .contains('Intents')
                 .click()
+    }
+
+    restApiTesting() {
+        cy.request("http://localhost/cci-backend/intent")
+            .then((response) => {
+                expect(response.status).to.equal(200)
+            })
+
+        cy.request({
+            method:'POST',
+            url: "http://localhost:80/cci-backend/intent",
+
+            body: {
+                "id":2,
+                "name": "test2",
+                "description": ""
+            }
+        }).then((response) => {
+            expect(response.body).has.property("description", "");
+        })
+
+        // cy.request({
+        //     method:'POST', 
+        //     url: "http://localhost/cci-backend/intent",
+        //     body: {
+        //                 "id":3,
+        //                 "name": "test3",
+        //                 "description": ""
+        //             }
+        // })
+        
+        const initialItems = [
+            {
+                "id": 1,
+                "name": "test1",
+                "description": "test1"
+            },
+            {
+                "id": 2,
+                "name": "test2",
+                "description": "test1"
+            }
+        ]
+
+        const getItems = () => 
+            cy.request('/cci-backend/intent')
+                .its('body')
+
+        const add = item =>
+            cy.request('POST', '/cci-backend/intent', item)
+        
+
+        cy.request("/cci-backend/intent")
+            .its('headers')
+            .its('content-type')
+            .should('include', 'application/json')
+
+        // cy.request({
+        //     method: 'DELETE',
+        //     url: 'https://***/api/v0/work-hours',
+        //     headers: {
+        //         //Authorization: res.request.headers.authorization,
+        //         'Content-Type': 'application/vnd.api+json',
+        //         Accept: 'application/vnd.api+json'
+        //     },
+        //     body: {
+        //         data: {
+        //             data: {
+        //                 attributes: { ust_id: res.response.body.data[0].id },
+        //                 type: 'work_hours'
+        //             }
+        //         }
+        //     }
+        // })
+
+        getItems()
+            .should('deep.eq', initialItems)
+
+        cy.request({
+            method:'POST',
+            url: "/cci-backend/intent",
+
+            body: {
+                "id":2,
+                "name": "test2",
+                "description": "test3",
+            }
+        })
+
+        cy.request('/cci-backend/intent')
+            .its('body')
+            .should('have.length', 1)
+        
+        getItems()
+            .should('have.length', 1)
     }
 }
 

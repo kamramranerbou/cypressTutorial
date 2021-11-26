@@ -1,5 +1,5 @@
 {
-    "baseUrl": "http://10.61.135.11/",
+    "baseUrl": "http://localhost:80/",
     "watchForFileChanges":true,
     "chromeWebSecurity": false,
     "experimentalSessionSupport":true,
