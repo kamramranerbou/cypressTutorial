@@ -1,6 +1,6 @@
 # Cypress End-to-End tests for Chatbot Control Interface
 
-## Start Local Server
+## Start Server
 
 ```
 bash docker-build.sh
