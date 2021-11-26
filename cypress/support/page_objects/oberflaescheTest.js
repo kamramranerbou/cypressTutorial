@@ -26,7 +26,7 @@ export class frontEnd {
         cy.get('[class="v-list-item__title ml-4"]')
             .contains('Start')
                 .click()
-        cy.wait(3000)
+        cy.wait(1000)
 
         // clicking Intents
         cy.get('[data-cy=navDrawerIntents]')
@@ -115,8 +115,8 @@ export class frontEnd {
             url: "http://localhost:80/cci-backend/intent",
 
             body: {
-                "id":2,
-                "name": "test2",
+                "id":3,
+                "name": "test3",
                 "description": ""
             }
         }).then((response) => {
@@ -159,37 +159,17 @@ export class frontEnd {
             .its('content-type')
             .should('include', 'application/json')
 
+
         // cy.request({
-        //     method: 'DELETE',
-        //     url: 'https://***/api/v0/work-hours',
-        //     headers: {
-        //         //Authorization: res.request.headers.authorization,
-        //         'Content-Type': 'application/vnd.api+json',
-        //         Accept: 'application/vnd.api+json'
-        //     },
+        //     method:'POST',
+        //     url: "/cci-backend/intent",
+
         //     body: {
-        //         data: {
-        //             data: {
-        //                 attributes: { ust_id: res.response.body.data[0].id },
-        //                 type: 'work_hours'
-        //             }
-        //         }
+        //         "id":1,
+        //         "name": "test1",
+        //         "description": "test1",
         //     }
         // })
-
-        getItems()
-            .should('deep.eq', initialItems)
-
-        cy.request({
-            method:'POST',
-            url: "/cci-backend/intent",
-
-            body: {
-                "id":2,
-                "name": "test2",
-                "description": "test3",
-            }
-        })
 
         cy.request('/cci-backend/intent')
             .its('body')
