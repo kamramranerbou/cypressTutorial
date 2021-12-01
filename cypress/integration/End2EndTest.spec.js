@@ -49,9 +49,10 @@ describe ('Test - 2', () => {
 
     beforeEach('visit url', () => {
         cy.visit('/')
+        cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
     })
 
-    it('Testing Body', () => {
+    it.only('Testing Body', () => {
 
         onFrontend.intents()
         onFrontend.Entities()
@@ -62,6 +63,8 @@ describe ('Test - 2', () => {
 describe('Test backend - 3', () => {
 
     beforeEach('visit url', () => {
+
+        
 
         cy.intercept({
             method:'GET',
@@ -85,9 +88,10 @@ describe('Test backend - 3', () => {
         })
 
         cy.visit('/')
+        cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
     })
 
-    it('Mocking Network Response', () => {
+    it.only('Mocking Network Response', () => {
         onFrontend.mockingApi ()
     })
 })
