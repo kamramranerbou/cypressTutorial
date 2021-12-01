@@ -41,7 +41,6 @@ describe ('Test - 1', () => {
         onFrontend.titleOfThePage()
         onFrontend.userInfo()
         onFrontend.menuBar()
-
     })
 })
 
@@ -52,7 +51,7 @@ describe ('Test - 2', () => {
         cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
     })
 
-    it.only('Testing Body', () => {
+    it('Testing Body', () => {
 
         onFrontend.intents()
         onFrontend.Entities()
@@ -64,14 +63,11 @@ describe('Test backend - 3', () => {
 
     beforeEach('visit url', () => {
 
-        
-
         cy.intercept({
             method:'GET',
             url : '/cci-backend/intent'
         },
         {
-            
             body: 
             [
                 {
@@ -88,7 +84,15 @@ describe('Test backend - 3', () => {
         })
 
         cy.visit('/')
-        cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
+        cy.get('[data-v-cd74aa12=""]').contains('Trainingsdaten').click()
+        // cy.get('[class="v-list-group ml-4"]').contains('Trainingsdaten')
+
+        // if (cy.get('[class="v-list-group ml-4"]').aria-expanded == false) {
+        //     cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
+
+        // }
+        
+        
     })
 
     it.only('Mocking Network Response', () => {
@@ -97,6 +101,7 @@ describe('Test backend - 3', () => {
 })
 
 describe("Testing API Endpoints", () => {
+
     it("Test Get Request", () => {
 
         onFrontend.restApiTesting()

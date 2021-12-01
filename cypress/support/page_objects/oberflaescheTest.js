@@ -12,7 +12,7 @@ export class frontEnd {
 
         // Avatar
         cy.get('.v-avatar')
-            .should('contain', 'RD')
+            .should('contain', 'CCI')
 
         // Asserting User Name
         cy.get('.v-navigation-drawer__content')
@@ -61,7 +61,12 @@ export class frontEnd {
         cy.get('[data-cy=navDrawerResponses]')
             .contains('Responses')
                 .click()
-        cy.wait(1000)
+
+        // Actions
+        cy.get('[data-cy="navDrawerActions"]')
+            .contains('Actions')
+                .click()
+        cy.wait(500)
     }
 
     intents() {
@@ -106,7 +111,6 @@ export class frontEnd {
             .contains('Suchen')
                 .click({force:true})
                     .type('test')
-        
     }
 
     mockingApi () {
