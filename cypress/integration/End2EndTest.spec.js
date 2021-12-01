@@ -89,13 +89,10 @@ describe('Test backend - 3', () => {
 
         // if (cy.get('[class="v-list-group ml-4"]').aria-expanded == false) {
         //     cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
-
         // }
-        
-        
     })
 
-    it.only('Mocking Network Response', () => {
+    it('Mocking Network Response', () => {
         onFrontend.mockingApi ()
     })
 })

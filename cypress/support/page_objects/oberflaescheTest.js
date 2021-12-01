@@ -121,14 +121,14 @@ export class frontEnd {
     }
 
     restApiTesting() {
-        cy.request("http://localhost/cci-backend/intent")
+        cy.request("http://localhost/trainingsdaten/intent/")
             .then((response) => {
                 expect(response.status).to.equal(200)
             })
 
         cy.request({
             method:'POST',
-            url: "http://localhost:80/cci-backend/intent",
+            url: "http://localhost/cci-backend/intent",
 
             body: {
                 "id":3,
@@ -139,15 +139,15 @@ export class frontEnd {
             expect(response.body).has.property("description", "");
         })
 
-        // cy.request({
-        //     method:'POST', 
-        //     url: "http://localhost/cci-backend/intent",
-        //     body: {
-        //                 "id":3,
-        //                 "name": "test3",
-        //                 "description": ""
-        //             }
-        // })
+        cy.request({
+            method:'GET', 
+            url: "http://localhost/trainingsdaten/intent",
+            body: {
+                        "id":3,
+                        "name": "test3",
+                        "description": ""
+                    }
+        })
         
         const initialItems = [
             {
@@ -176,23 +176,23 @@ export class frontEnd {
             .should('include', 'application/json')
 
 
-        // cy.request({
-        //     method:'POST',
-        //     url: "/cci-backend/intent",
+        cy.request({
+            method:'POST',
+            url: "/cci-backend/intent",
 
-        //     body: {
-        //         "id":1,
-        //         "name": "test1",
-        //         "description": "test1",
-        //     }
-        // })
+            body: {
+                "id":1,
+                "name": "test1",
+                "description": "test1",
+            }
+        })
 
         cy.request('/cci-backend/intent')
             .its('body')
-            .should('have.length', 1)
+            .should('have.length', 2)
         
         getItems()
-            .should('have.length', 1)
+            .should('have.length', 2)
     }
 }
 
