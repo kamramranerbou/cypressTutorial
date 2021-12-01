@@ -1,5 +1,3 @@
-
-
 import { beforeEach } from "mocha"
 import { onFrontend } from "../support/page_objects/oberflaescheTest"
 
@@ -7,8 +5,9 @@ describe ('Test - 1', () => {
 
     beforeEach('visit url', () => {
         cy.visit('/')
+        cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
         cy.get("[data-cy=navDrawerIntents]").click()
-        cy.url().should("eq", "http://localhost/intent/");
+        cy.url().should("eq", "http://localhost/trainingsdaten/intent/");
     })
 
     
@@ -74,7 +73,7 @@ describe('Test backend - 3', () => {
             [
                 {
                 "id":6,
-                "name":"Wetter",
+                "name":"Ripon",
                 "description":"",
                 "createDate":"2021-11-17T09:06:28.807+00:00",
                 "useEntities":true,
@@ -88,7 +87,7 @@ describe('Test backend - 3', () => {
         cy.visit('/')
     })
 
-    it('Mocking Network', () => {
+    it('Mocking Network Response', () => {
         onFrontend.mockingApi ()
     })
 })

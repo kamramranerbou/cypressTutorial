@@ -28,6 +28,10 @@ export class frontEnd {
                 .click()
         cy.wait(1000)
 
+        cy.get('[class="v-list-item__title"]')
+            .contains('Trainingsdaten')
+                .click()
+
         // clicking Intents
         cy.get('[data-cy=navDrawerIntents]')
             .contains('Intents')
@@ -61,13 +65,21 @@ export class frontEnd {
     }
 
     intents() {
+
+        // Expand Navigation Trainingsdaten
+        cy.get('[class="v-list-item__title"]')
+            .contains('Trainingsdaten')
+                .click()
+
         // Intents area testing
         cy.get('[data-cy=navDrawerIntents]')
             .contains('Intents')
                 .click()
         cy.wait(500)
         // Search something
-        cy.get('[id="input-49"]').type('Wetter')
+        cy.get('[class="v-text-field__slot"]')
+            .contains('Suchen').click({force:true})
+                .type('Wetter')
 
         cy.get('[data-cy=createIntentButton]').click()
         cy.wait(500)
