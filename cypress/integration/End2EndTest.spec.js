@@ -1,7 +1,7 @@
 import { beforeEach } from "mocha"
 import { onFrontend } from "../support/page_objects/oberflaescheTest"
 
-describe ('Test - 1', () => {
+describe ('Test Case - 1', () => {
 
     beforeEach('visit url', () => {
         cy.visit('/')
@@ -44,11 +44,11 @@ describe ('Test - 1', () => {
     })
 })
 
-describe ('Test - 2', () => {
+describe ('Test Case - 2', () => {
 
     beforeEach('visit url', () => {
         cy.visit('/')
-        cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
+        //cy.get('[class="v-list-item__title"]').contains('Trainingsdaten').click()
     })
 
     it('Testing Body', () => {
@@ -59,7 +59,7 @@ describe ('Test - 2', () => {
     })
 })
 
-describe('Test backend - 3', () => {
+describe('Test Case - 3, Mocking Network Response ', () => {
 
     beforeEach('visit url', () => {
 
@@ -99,8 +99,27 @@ describe('Test backend - 3', () => {
 
 describe("Testing API Endpoints", () => {
 
-    it("Test Get Request", () => {
+    beforeEach('visit url', () => {
+
+        cy.visit('/')
+        cy.get('[data-v-cd74aa12=""]').contains('Trainingsdaten').click()
+    })
+
+    it.only("Test Get Request", () => {
 
         onFrontend.restApiTesting()
+    })
+})
+
+describe("Backend Testing", () => {
+
+    beforeEach('visit url', () => {
+
+        cy.visit('/', {failOnStatusCode: false})
+        cy.get('[data-v-cd74aa12=""]').contains('Trainingsdaten').click()
+    })
+    
+    it("Get Request", () => {
+        onFrontend.backEndTesting()
     })
 })

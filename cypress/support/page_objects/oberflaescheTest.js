@@ -1,5 +1,8 @@
 import { capitalize } from "lodash"
 
+
+const m = Math.floor(Math.random() * 1000);
+
 export class frontEnd {
 
     titleOfThePage() {
@@ -9,7 +12,7 @@ export class frontEnd {
     }
 
     userInfo() {
-
+        
         // Avatar
         cy.get('.v-avatar')
             .should('contain', 'CCI')
@@ -121,17 +124,17 @@ export class frontEnd {
     }
 
     restApiTesting() {
-        cy.request("http://localhost/trainingsdaten/intent/")
+        cy.request("http://localhost/cci-backend/intent")
             .then((response) => {
                 expect(response.status).to.equal(200)
             })
 
         cy.request({
             method:'POST',
-            url: "http://localhost/cci-backend/intent",
+            url: "/cci-backend/intent",
 
             body: {
-                "id":3,
+                "id": 3,
                 "name": "test3",
                 "description": ""
             }
@@ -141,7 +144,7 @@ export class frontEnd {
 
         cy.request({
             method:'GET', 
-            url: "http://localhost/trainingsdaten/intent",
+            url: "/cci-backend/intent",
             body: {
                         "id":3,
                         "name": "test3",
@@ -149,32 +152,10 @@ export class frontEnd {
                     }
         })
         
-        const initialItems = [
-            {
-                "id": 1,
-                "name": "test1",
-                "description": "test1"
-            },
-            {
-                "id": 2,
-                "name": "test2",
-                "description": "test1"
-            }
-        ]
-
-        const getItems = () => 
-            cy.request('/cci-backend/intent')
-                .its('body')
-
-        const add = item =>
-            cy.request('POST', '/cci-backend/intent', item)
-        
-
         cy.request("/cci-backend/intent")
             .its('headers')
             .its('content-type')
             .should('include', 'application/json')
-
 
         cy.request({
             method:'POST',
@@ -190,9 +171,39 @@ export class frontEnd {
         cy.request('/cci-backend/intent')
             .its('body')
             .should('have.length', 2)
+    }
+
+    backEndTesting() {
         
-        getItems()
-            .should('have.length', 2)
+        // get Response code
+        cy.request({
+            method: 'GET', 
+            url: '/cci-backend/intent'
+        }).then((response) => {
+                expect(response.status).to.eq(200)
+        })
+
+        // POST and ASSERT Post
+        cy.request({
+            method:'POST',
+            url: "/cci-backend/intent",
+
+            body: {
+                "id": m,
+                "name": "test"+String(m),
+                "description": "test"+String(m),
+            }
+        }).then(
+                    (response) => {
+                    //expect(response.body.id).to.eq(m)
+                    expect(response.body).has.property('name', "test"+String(m));
+                    expect(response.body).has.property('description', "test"+String(m));
+            })
+        let i = 2
+        const j = i * 3
+        cy.request('/cci-backend/intent')
+            .its('body')
+                .should('have.length', 3)
     }
 }
 
